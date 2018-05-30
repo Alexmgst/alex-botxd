@@ -160,4 +160,4 @@ async def on_message(message):
     elif message.content.startswith("?commands"):
         await client.send_message(message.channel, str(commands))
 
-client.run("Mzg3OTg1Mzk0Mzg3NTE3NDQw.DQmdCQ.2C1TRBOjmu-in6wukZmew5G9-Sc")
+client.run(BOT_TOKEN)
