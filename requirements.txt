@@ -2,4 +2,5 @@ praw
 discord.py
 bs4
 lxml
-
+urllib.request
+logging
