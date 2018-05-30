@@ -138,24 +138,10 @@ async def on_message(message):
         else:
             result = "zahl"
         await client.send_message(message.channel,result)
-    elif message.content.startswith("!summon"):
-        try:
-            channel = message.author.voice_channel
-            voice = await client.join_voice_channel(channel)
-            inChannel = True
-        except discord.InvalidArgument:
-            await client.send_message(message.channel, " Da ist leider etwas schiefgelaufen!")            
-        except discord.ClientException:
-            await client.send_message(message.channel, "Ich bin bereits in einem Voice Channel!")
-    elif message.content.startswith("!disconnect"):
-        await client.send_message(message.channel,"bye bye")
-        inChannel = False
-        await client.logout()
-    elif message.content.startswith("!krabbelante"):
-        await client.send_file(message.channel,"krabbe.png")
 
-    elif message.content.startswith("!schweinepriester"):
-        await client.send_file(message.channel, "images.jpg")
+
+
+
     
     elif message.content.startswith("?commands"):
         await client.send_message(message.channel, str(commands))
