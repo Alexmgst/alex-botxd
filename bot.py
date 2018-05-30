@@ -51,12 +51,12 @@ async def on_ready():
 
 
 
-commands = {"!summon" : "Joint dem voice channel",
+commands = {
             "!news" : "Die aktuellsten News geliefert",
             "!coinflip" : "Ein virtueller Münzwurf",
-            "!nicoistdumm" : "...",
-            "!krabbelante" : "Schickt ein Foto von Krabbelante",
-            "!schweinepriester" : "Sendet ein Bild des obersten schweinepriesters",            
+            
+            
+                        
             "!role : Rolle  ":"Verleiht sich eine Rolle (Ausser Admin!)",
             "!quickmaths : Aufgabe" : "Rechnet eine Matheaufgabe aus.",
             "!meme" : "Sendet ein meme"
