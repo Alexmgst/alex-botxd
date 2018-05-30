@@ -38,7 +38,7 @@ inChannel = False
 
 
 bad_words = ["idiot","arsch", "opfer","arschloch","noob","wichser","muesslimaxxxe","blödian","kek","spast","fick dich", "du bist dumm","ficker","dummer","cock", "spasti","cunt","fuck","hure","hurensohn","ich hasse dich","fettsack","dickwanst","kys","suckt","scheisser","scheisshaufen","scheiße","scheisse","stfu"]
-jokes = ["Neulich im Kino Verkäuferin: Das Popcorn süß oder salzig? Er: So wie meine Freundin. Verkäuferin Hässliche Popcorn haben wir nicht!", "Wenn ein Yogalehrer seine Beine senkrecht nach oben streckt und dabei furzt, welche Yoga Figur stellt er da? Eine Duftkerze.","Was ist der gefährliste Tag für ein Uboot ? -Tag der offen Tür","Wie nennt man einen übergewichtigen Vegetarier? Biotonne.", "Lehrer: So Tom du gehst jetzt vor die Tür dein Gelaber interessiert keinen! Schüler: Dann können sie ja gleich mitkommen!", "Warum freut sich eine Blondine so, wenn sie ein Puzzle nach 6 Monaten fertig hat? – Weil auf der Packung steht: 2-4 Jahre.", "Wie nennen Chinesen einen Oberschenkelbruch? Knacki Knacki nah bei Sacki","Warum macht die Blondiene ihren Jogurt schon im Supermarkt auf?Weil drauf steht hier öffnen","Was steht auf dem Grabstein eines Mathematikers? – Damit hat er nicht gerechnet."]
+jokes = ["Neulich im Kino Verkäuferin: Das Popcorn süß oder salzig? Er: So wie meine Freundin. Verkäuferin: Hässliche Popcorn haben wir nicht!", "Wenn ein Yogalehrer seine Beine senkrecht nach oben streckt und dabei furzt, welche Yoga Figur stellt er da? Eine Duftkerze.","Was ist der gefährliste Tag für ein Uboot ? -Tag der offen Tür","Wie nennt man einen übergewichtigen Vegetarier? Biotonne.", "Lehrer: So Tom du gehst jetzt vor die Tür dein Gelaber interessiert keinen! Schüler: Dann können sie ja gleich mitkommen!", "Warum freut sich eine Blondine so, wenn sie ein Puzzle nach 6 Monaten fertig hat? – Weil auf der Packung steht: 2-4 Jahre.", "Wie nennen Chinesen einen Oberschenkelbruch? Knacki Knacki nah bei Sacki","Warum macht die Blondiene ihren Jogurt schon im Supermarkt auf?Weil drauf steht hier öffnen","Was steht auf dem Grabstein eines Mathematikers? – Damit hat er nicht gerechnet."]
 
 
 token = "Mzg3OTg1Mzk0Mzg3NTE3NDQw.DQmdCQ.2C1TRBOjmu-in6wukZmew5G9-Sc"
@@ -102,7 +102,7 @@ async def on_message(message):
         
 
     elif message.content.lower().startswith("!witz"):
-        await client.send_message(message.channel, "Witz des Tages: " + random.choice(jokes) + " :yay:")
+        await client.send_message(message.channel, "Witz des Tages: " + random.choice(jokes) + " \:yay:")
     elif message.content.lower().startswith("!role"):
         if "moderator" in [y.name.lower() for y in message.author.roles]:
 
