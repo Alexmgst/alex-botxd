@@ -3,9 +3,7 @@ import asyncio
 import random
 import time
 from discord.ext import commands
-import mutagen
-from mutagen.mp3 import MP3
-import subprocess
+
 import logging
 import praw
 import bs4 as bs
@@ -14,7 +12,7 @@ import lxml
 
 reddit = praw.Reddit(client_id="JC1EfGldDUnJyQ", client_secret="X0vAkLJHeXAt6Drkrw4AW7cs6AE",password="DeniaOliva2",user_agent="SKRIPT v. DiscordBot", username="al3xmg5t")
 meme_subreddit = reddit.subreddit("memes")
-hot_memes = meme_subreddit.hot(limit = 1000)
+
 
 
 logging.basicConfig(level=logging.INFO)
@@ -88,7 +86,7 @@ async def on_message(message):
         await client.send_message(message.channel, "Das stimmt" + str(message.author))
     elif message.content.lower().startswith("!meme"):
         if message.channel.name == "memes":
-            
+            hot_memes = meme_subreddit.hot(limit = 1000)
             random_meme = random.randint(0,30)
             count = 0
             for submission in hot_memes:
