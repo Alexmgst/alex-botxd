@@ -49,9 +49,6 @@ async def on_ready():
 
 
 
-if not discord.opus.is_loaded():
-    discord.opus.load_opus('opus')
-
 
 
 commands = {"!summon" : "Joint dem voice channel",
