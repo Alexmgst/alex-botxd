@@ -102,7 +102,7 @@ async def on_message(message):
         
 
     elif message.content.lower().startswith("!witz"):
-        await client.send_message(message.channel, "Witz des Tages: " + random.choice(jokes) + " <yay:451463451638890507>)
+        await client.send_message(message.channel, "Witz des Tages: " + random.choice(jokes) + " <yay:451463451638890507>")
     elif message.content.lower().startswith("!role"):
         if "moderator" in [y.name.lower() for y in message.author.roles]:
 
