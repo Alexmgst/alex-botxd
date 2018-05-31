@@ -57,7 +57,7 @@ async def on_ready():
 commands = {
             "!news" : "Die aktuellsten News geliefert",
             "!coinflip" : "Ein virtueller Münzwurf",
-            "!witz" : "Ein lustiger Witz;                        
+            "!witz" : "Ein lustiger Witz";                        
             "!role : Rolle  ":"Verleiht sich eine Rolle (Ausser Admin!)",
             "!quickmaths : Aufgabe" : "Rechnet eine Matheaufgabe aus.",
             "!meme" : "Sendet ein meme"
