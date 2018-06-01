@@ -9,11 +9,11 @@ import praw
 import bs4 as bs
 import urllib.request
 import lxml
-
+global url
 reddit = praw.Reddit(client_id="JC1EfGldDUnJyQ", client_secret="X0vAkLJHeXAt6Drkrw4AW7cs6AE",password="DeniaOliva2",user_agent="SKRIPT v. DiscordBot", username="al3xmg5t")
 meme_subreddit = reddit.subreddit("memes")
 
-
+chars = ["q","w","e","r","t","z","u","i","o","p","a","s","d","f","g","h","j","k","l","y","x","c","v","b","n","m","Q","W","R","E","T","Z","U","I","O","P","A","S","D","F","G","H","J","K","L","Y","X","C","V","B","N","M"]
 
 logging.basicConfig(level=logging.INFO)
 client = discord.Client()
@@ -64,9 +64,17 @@ commands = {
             }
             
 
-    
+async def generate_url():
+    global url
+    char1,char2,char3,char4,char5,char6,char7,char8,char9,char10,char11 == random.choice(chars), random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars)
+    url = "https://www.youtube.com/watch?v=" + char1 + char2 + char3 + char4 + char5 + char6 + char7+ char8 + char9 + char10 + char11
+    soup2 = urllib.request.urlopen(url).read()
+    soup_object2 = bs.BeautifulSoup(soup,"lxml")
+        
+        
 @client.event
 async def on_message(message):
+    global url
     global meme
     global hot_memes    
     global inChannel
@@ -144,5 +152,16 @@ async def on_message(message):
     
     elif message.content.startswith("?commands"):
         await client.send_message(message.channel, str(commands))
-
+    elif message.content.lower.startswith("!youtube_random") and message.channel.name == "youtube-twitch":
+        await generate_url()
+        for text in soup_object2.find_all("ytd-player-error-message-renderer"):
+            error_count += 1
+            break        
+        if error_count == 0:
+            await client.send_message(message.channel, url)
+        else:
+            await generate_url()
+         
+        
+        
 client.run(token)
