@@ -3,7 +3,7 @@ import asyncio
 import random
 import time
 from discord.ext import commands
-
+from pytube import YouTube
 import logging
 import praw
 import bs4 as bs
@@ -69,11 +69,17 @@ async def generate_url():
     global soup2
     global soup_object2
     global error_count
+    global channel
     error_count = 0
     char1,char2,char3,char4,char5,char6,char7,char8,char9,char10,char11 = random.choice(chars), random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars)
     url = "https://www.youtube.com/watch?v=" + char1 + char2 + char3 + char4 + char5 + char6 + char7+ char8 + char9 + char10 + char11
-    soup2 = urllib.request.urlopen(url).read()
-    soup_object2 = bs.BeautifulSoup(soup2,"lxml")
+    yt = YouTube(url)
+    try:
+        video_title = yt.title
+        await client.send_message(channel,url)
+    except:
+        await generate_url()
+
         
         
 @client.event
@@ -82,7 +88,8 @@ async def on_message(message):
     global soup2
     global soup_object2
     global meme
-    global hot_memes    
+    global hot_memes
+    global channel
     global inChannel
     global voice
     global player
@@ -160,12 +167,13 @@ async def on_message(message):
     elif message.content.startswith("?commands"):
         await client.send_message(message.channel, str(commands))
     elif message.content.lower().startswith("!youtube_random") and message.channel.name == "youtube-twitch":
-        
+        channel = message.channel
         await generate_url()
-        for text in soup_object2.find_all("ytd-player-error-message-renderer"):
+        
+
           
-            await client.send_message(message.channel, "hallo")
-        await client.send_message(message.channel,url)
+        
+        
          
         
         
