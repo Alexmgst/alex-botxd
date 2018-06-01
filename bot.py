@@ -162,11 +162,8 @@ async def on_message(message):
     elif message.content.lower().startswith("!youtube_random") and message.channel.name == "youtube-twitch":
         
         await generate_url()
-        for text in soup_object2.find_all("ytd-player-error-message-renderer"):
-            error_count += 1
-            break        
-        if error_count == 0:
-            await client.send_message(message.channel, url)
+         text = soup_object2.find_all("ytd-player-error-message-renderer")       
+         await client.send_message(message.channel, text)
         else:
             await generate_url()
          
