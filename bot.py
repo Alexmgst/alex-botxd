@@ -65,27 +65,7 @@ commands = {
             }
             
 
-async def generate_url():
-    global times_took
-    global url
-    global soup2
-    global soup_object2
-    global error_count
-    global channel
-    times_took += 1
-    if times_took == 1000:
-        client.send_message(channel, "Ich habe 1000 urls generiert, doch keine existiert :(")
-        times_took= 0
-        return
-    error_count = 0
-    char1,char2,char3,char4,char5,char6,char7,char8,char9,char10,char11 = random.choice(chars), random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars)
-    url = "https://www.youtube.com/watch?v=" + char1 + char2 + char3 + char4 + char5 + char6 + char7+ char8 + char9 + char10 + char11
-    
-    try:
-        yt = YouTube(url)
-        await client.send_message(channel,url)
-    except:
-        await generate_url()
+
 
         
         
@@ -173,13 +153,7 @@ async def on_message(message):
     
     elif message.content.startswith("?commands"):
         await client.send_message(message.channel, str(commands))
-    elif message.content.lower().startswith("!youtube_random") and message.channel.name == "youtube-twitch":
-        channel = message.channel
-        await generate_url()
-        
-
-          
-        
+  
         
          
         
