@@ -66,7 +66,7 @@ commands = {
 
 async def generate_url():
     global url
-    char1,char2,char3,char4,char5,char6,char7,char8,char9,char10,char11 == random.choice(chars), random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars)
+    char1,char2,char3,char4,char5,char6,char7,char8,char9,char10,char11 = random.choice(chars), random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars)
     url = "https://www.youtube.com/watch?v=" + char1 + char2 + char3 + char4 + char5 + char6 + char7+ char8 + char9 + char10 + char11
     soup2 = urllib.request.urlopen(url).read()
     soup_object2 = bs.BeautifulSoup(soup,"lxml")
