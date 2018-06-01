@@ -68,6 +68,8 @@ async def generate_url():
     global url
     global soup2
     global soup_object2
+    global error_count
+    error_count = 0
     char1,char2,char3,char4,char5,char6,char7,char8,char9,char10,char11 = random.choice(chars), random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars)
     url = "https://www.youtube.com/watch?v=" + char1 + char2 + char3 + char4 + char5 + char6 + char7+ char8 + char9 + char10 + char11
     soup2 = urllib.request.urlopen(url).read()
@@ -84,6 +86,7 @@ async def on_message(message):
     global inChannel
     global voice
     global player
+    global error_count
     global gamer
     sentence = message.content.lower().split()
     
@@ -157,6 +160,7 @@ async def on_message(message):
     elif message.content.startswith("?commands"):
         await client.send_message(message.channel, str(commands))
     elif message.content.lower().startswith("!youtube_random") and message.channel.name == "youtube-twitch":
+        
         await generate_url()
         for text in soup_object2.find_all("ytd-player-error-message-renderer"):
             error_count += 1
