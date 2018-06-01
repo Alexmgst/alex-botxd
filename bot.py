@@ -12,7 +12,7 @@ import lxml
 global url
 reddit = praw.Reddit(client_id="JC1EfGldDUnJyQ", client_secret="X0vAkLJHeXAt6Drkrw4AW7cs6AE",password="DeniaOliva2",user_agent="SKRIPT v. DiscordBot", username="al3xmg5t")
 meme_subreddit = reddit.subreddit("memes")
-
+times_took = 0
 chars = ["q","w","e","r","t","z","u","i","o","p","a","s","d","f","g","h","j","k","l","y","x","c","v","b","n","m","Q","W","R","E","T","Z","U","I","O","P","A","S","D","F","G","H","J","K","L","Y","X","C","V","B","N","M"]
 
 logging.basicConfig(level=logging.INFO)
@@ -65,18 +65,23 @@ commands = {
             
 
 async def generate_url():
+
     global url
     global soup2
     global soup_object2
     global error_count
     global channel
+    times_took += 1
+    if times_took == 1000:
+        client.send_message(channel, "Ich habe 1000 urls generiert, doch keine existiert :(")
+        times_took= 0
+        break
     error_count = 0
     char1,char2,char3,char4,char5,char6,char7,char8,char9,char10,char11 = random.choice(chars), random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars)
     url = "https://www.youtube.com/watch?v=" + char1 + char2 + char3 + char4 + char5 + char6 + char7+ char8 + char9 + char10 + char11
     
     try:
         yt = YouTube(url)
-        video_title = yt.title
         await client.send_message(channel,url)
     except:
         await generate_url()
