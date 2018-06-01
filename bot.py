@@ -75,7 +75,7 @@ async def generate_url():
     if times_took == 1000:
         client.send_message(channel, "Ich habe 1000 urls generiert, doch keine existiert :(")
         times_took= 0
-        break
+        return
     error_count = 0
     char1,char2,char3,char4,char5,char6,char7,char8,char9,char10,char11 = random.choice(chars), random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars)
     url = "https://www.youtube.com/watch?v=" + char1 + char2 + char3 + char4 + char5 + char6 + char7+ char8 + char9 + char10 + char11
