@@ -66,6 +66,8 @@ commands = {
 
 async def generate_url():
     global url
+    global soup2
+    global soup_object2
     char1,char2,char3,char4,char5,char6,char7,char8,char9,char10,char11 = random.choice(chars), random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars)
     url = "https://www.youtube.com/watch?v=" + char1 + char2 + char3 + char4 + char5 + char6 + char7+ char8 + char9 + char10 + char11
     soup2 = urllib.request.urlopen(url).read()
@@ -75,6 +77,8 @@ async def generate_url():
 @client.event
 async def on_message(message):
     global url
+    global soup2
+    global soup_object2
     global meme
     global hot_memes    
     global inChannel
