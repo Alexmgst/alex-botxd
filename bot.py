@@ -163,9 +163,8 @@ async def on_message(message):
         
         await generate_url()
         for text in soup_object2.find_all("ytd-player-error-message-renderer"):
-            
-            print("xd")
-            await client.send_message(message.channel, str(text.text))
+          
+            await client.send_message(message.channel, str(text))
         #else:
             #await generate_url()
          
