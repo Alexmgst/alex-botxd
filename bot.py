@@ -73,8 +73,9 @@ async def generate_url():
     error_count = 0
     char1,char2,char3,char4,char5,char6,char7,char8,char9,char10,char11 = random.choice(chars), random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars),random.choice(chars)
     url = "https://www.youtube.com/watch?v=" + char1 + char2 + char3 + char4 + char5 + char6 + char7+ char8 + char9 + char10 + char11
-    yt = YouTube(url)
+    
     try:
+        yt = YouTube(url)
         video_title = yt.title
         await client.send_message(channel,url)
     except:
