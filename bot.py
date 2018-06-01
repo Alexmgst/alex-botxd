@@ -74,7 +74,7 @@ async def on_message(message):
         if word in bad_words:
             if message.author.name != "alex-botxd":
                
-                await client.send_message(message.channel, "Nicht beleidigen bzw. fluchen <@" +  str(message.user.id) + "> Wenn das so weiter geht, werden deine Nachrichten zensiert!")
+                await client.send_message(message.channel, "Nicht beleidigen bzw. fluchen <@" +  str(message.author.id) + "> Wenn das so weiter geht, werden deine Nachrichten zensiert!")
     if message.content.startswith("!nicoistdumm"):
         await client.send_message(message.channel, "Das stimmt" + str(message.author))
     elif message.content.lower().startswith("!meme"):
