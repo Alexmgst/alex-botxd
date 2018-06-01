@@ -10,6 +10,7 @@ import bs4 as bs
 import urllib.request
 import lxml
 global url
+global times_took
 reddit = praw.Reddit(client_id="JC1EfGldDUnJyQ", client_secret="X0vAkLJHeXAt6Drkrw4AW7cs6AE",password="DeniaOliva2",user_agent="SKRIPT v. DiscordBot", username="al3xmg5t")
 meme_subreddit = reddit.subreddit("memes")
 times_took = 0
@@ -65,7 +66,7 @@ commands = {
             
 
 async def generate_url():
-
+    global times_took
     global url
     global soup2
     global soup_object2
