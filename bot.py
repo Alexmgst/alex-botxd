@@ -11,7 +11,7 @@ import urllib.request
 import lxml
 global url
 global times_took
-reddit = praw.Reddit(client_id="JC1EfGldDUnJyQ", client_secret="X0vAkLJHeXAt6Drkrw4AW7cs6AE",password="DeniaOliva2@",user_agent="SKRIPT v. DiscordBot", username="al3xmg5t")
+reddit = praw.Reddit(client_id="JC1EfGldDUnJyQ", client_secret="X0vAkLJHeXAt6Drkrw4AW7cs6AE",password="XPadf72J",user_agent="SKRIPT v. DiscordBot", username="al3xmg5t")
 meme_subreddit = reddit.subreddit("memes")
 
 logging.basicConfig(level=logging.INFO)
